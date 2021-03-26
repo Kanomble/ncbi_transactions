@@ -1,5 +1,5 @@
 #AUTHOR Lukas Becker
-# miniconda - snakemake - NCBI BLAST+ 2.11.0+ - edirect - Dockerfile
+# miniconda - NCBI BLAST+ 2.11.0+ - edirect - Dockerfile
 #
 
 #base image; maybe choose another image
@@ -46,7 +46,7 @@ RUN conda config --add channels defaults
 RUN conda config --add channels bioconda
 RUN conda config --add channels conda-forge
 
-# Set-up django and postgres packages
+# Download wget and pandas
 COPY requirements.txt /blast/
 RUN pip install -r requirements.txt
 
