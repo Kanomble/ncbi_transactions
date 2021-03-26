@@ -3,8 +3,7 @@ Functional interfaces for transactions with NCBI databases. Download the refseq 
 
 ## Quick Installation
 Docker is used for the installation of required software.
-
-'''Shell
+```console
 docker build -t pythonblast:1.0 .
 docker run -dt -v ${PWD}:/blast/applications pythonblast:1.0
-'''
+```
