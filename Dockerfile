@@ -45,7 +45,7 @@ RUN conda update --all
 RUN conda config --add channels defaults
 RUN conda config --add channels bioconda
 RUN conda config --add channels conda-forge
-
+RUN conda install -c conda-forge notebook
 # Download wget and pandas
 COPY requirements.txt /blast/
 RUN pip install -r requirements.txt
@@ -60,4 +60,8 @@ WORKDIR /blast/applications
 # Delete not required packages etc..
 RUN apt-get autoremove --purge --yes && apt-get clean && rm -rf /var/lib/apt/lists/*
 # Optional commands e.g. initiating scripts
-CMD ["bash"]
+
+#open port for jupyter notebook
+EXPOSE 8888
+
+CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
