@@ -134,3 +134,4 @@ dmypy.json
 .idea/ncbi_transactions.iml
 .idea/vcs.xml
 .idea/workspace.xml
+scripts/eubacteria.taxid
