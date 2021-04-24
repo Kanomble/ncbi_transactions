@@ -23,11 +23,15 @@ If everything is set successfully you should see this output in the container te
 741158.
 
 ## E-Direct
+EDirect search commands for symbiosis, EPS and organismic interactions
 ````Shell
 esearch -db pubmed -query "EPS membrane formation" | elink -target protein | efilter -organism curvibacter | efetch -format fasta > curvibacter_eps_proteins.faa
 
 esearch -db pubmed -query "genes involved in symbiosis" | efetch format abstract > abstracts_genes_involved_in_symbiosis.list.txt
 
 esearch -db pubmed -query "genes involved in symbiosis" | elink -target protein | efilter -organism curvibacter | efetch -format fasta > curvibacter_symbiosis_gene_candidates.faa
+
+
+esearch -db pubmed -query "organismic interactions" | elink -target protein | efilter -organism eubacteria | efetch -format fasta > eubacteria_organismic_interactions.faa
 
 ````
