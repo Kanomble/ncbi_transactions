@@ -23,7 +23,7 @@ If everything is set successfully you should see this output in the container te
 741158.
 
 ## E-Direct
-`````Shell
+````Shell
 esearch -db pubmed -query "EPS membrane formation" | elink -target protein | efilter -organism curvibacter | efetch -format fasta > curvibacter_eps_proteins.faa
 
 esearch -db pubmed -query "genes involved in symbiosis" | efetch format abstract > abstracts_genes_involved_in_symbiosis.list.txt
