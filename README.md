@@ -35,5 +35,5 @@ esearch -db pubmed -query "organismic interactions" | elink -target protein | ef
 ````
 More advanced filtering
 ````Shell
-esearch -db pubmed -query "symbiosis [MAJR] OR organismic interactions [MAJR] AND NOT plant [TIAB] AND NOT rhizobacteria [TIAB] AND NOT Legumes [TIAB] AND NOT legumes [TIAB] AND NOT legume-rhizobial [TIAB] AND NOT plants [TIAB] AND NOT rhizobium [TIAB] AND NOT rhizobia [TIAB]" | efetch -format docsum | xtract -pattern DocumentSummary -sep '\t' -element Id PubDate Source Author Title ELocationID > symbiosis_org_int_reviews.txt
+esearch -db pubmed -query "microbiome [MAJR:TIAB] AND symbiosis [MAJR:TIAB] AND review [PT]" | efetch -format docsum | xtract -pattern DocumentSummary -sep '\t' -element Id PubDate Source Author Title ELocationID > symbiosis_reviews.txt
 ````
