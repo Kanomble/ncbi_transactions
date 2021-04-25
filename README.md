@@ -35,5 +35,5 @@ esearch -db pubmed -query "organismic interactions" | elink -target protein | ef
 ````
 More advanced filtering
 ````Shell
-esearch -db pubmed -query "symbiosis [MAJR] OR organismic interactions [MAJR] AND NOT plants [MAJR] AND review [PT]" | efetch -format docsum | xtract -pattern DocumentSummary -sep '\t' -element Id PubDate Source Author Title ELocationID
+esearch -db pubmed -query "symbiosis [MAJR] OR organismic interactions [MAJR] AND NOT plants [MAJR] AND review [PT]" | efetch -format docsum | xtract -pattern DocumentSummary -sep '\t' -element Id PubDate Source Author Title ELocationID > symbiosis_org_int_reviews.txt
 ````
