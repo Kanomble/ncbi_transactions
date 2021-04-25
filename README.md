@@ -31,7 +31,5 @@ esearch -db pubmed -query "genes involved in symbiosis" | efetch format abstract
 
 esearch -db pubmed -query "genes involved in symbiosis" | elink -target protein | efilter -organism curvibacter | efetch -format fasta > curvibacter_symbiosis_gene_candidates.faa
 
-
 esearch -db pubmed -query "organismic interactions" | elink -target protein | efilter -organism eubacteria | efetch -format fasta > eubacteria_organismic_interactions.faa
-
 ````
