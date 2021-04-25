@@ -33,3 +33,7 @@ esearch -db pubmed -query "genes involved in symbiosis" | elink -target protein 
 
 esearch -db pubmed -query "organismic interactions" | elink -target protein | efilter -organism eubacteria | efetch -format fasta > eubacteria_organismic_interactions.faa
 ````
+More advanced filtering
+````Shell
+esearch -db pubmed -query "symbiosis [MAJR] OR organismic interactions [MAJR] AND NOT plants [MAJR] AND review [PT]" | efetch -format docsum | xtract -pattern DocumentSummary -sep '\t' -element Id PubDate Source Author Title ELocationID
+````
