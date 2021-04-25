@@ -23,7 +23,7 @@ If everything is set successfully you should see this output in the container te
 741158.
 
 ## E-Direct
-EDirect search commands for symbiosis, EPS and organismic interactions
+EDirect search commands for symbiosis, EPS and organismic interactions. Search field and tags for pubmed are listed [here](https://pubmed.ncbi.nlm.nih.gov/help/#search-tags).
 ````Shell
 esearch -db pubmed -query "EPS membrane formation" | elink -target protein | efilter -organism curvibacter | efetch -format fasta > curvibacter_eps_proteins.faa
 
