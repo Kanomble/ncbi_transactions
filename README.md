@@ -23,7 +23,7 @@ If everything is set successfully you should see this output in the container te
 741158.
 
 ## E-Direct
-EDirect search commands for symbiosis, EPS and organismic interactions. Search field and tags for pubmed are listed [here](https://pubmed.ncbi.nlm.nih.gov/help/#search-tags).
+EDirect search commands for symbiosis, EPS and organismic interactions. Search field and tags for pubmed are listed [here](https://pubmed.ncbi.nlm.nih.gov/help/#search-tags). Some examples regarding the linking process of EDirect commands.
 ````Shell
 esearch -db pubmed -query "EPS membrane formation" | elink -target protein | efilter -organism curvibacter | efetch -format fasta > curvibacter_eps_proteins.faa
 
@@ -33,7 +33,7 @@ esearch -db pubmed -query "genes involved in symbiosis" | elink -target protein 
 
 esearch -db pubmed -query "organismic interactions" | elink -target protein | efilter -organism eubacteria | efetch -format fasta > eubacteria_organismic_interactions.faa
 ````
-More advanced filtering
+More advanced filtering with `xtract`.
 ````Shell
 esearch -db pubmed -query "microbiome [MAJR:TIAB] AND symbiosis [MAJR:TIAB] AND review [PT]" | efetch -format docsum | xtract -pattern DocumentSummary -sep '\t' -element Id PubDate Source Author Title ELocationID > symbiosis_reviews.txt
 ````
