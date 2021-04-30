@@ -36,4 +36,9 @@ esearch -db pubmed -query "organismic interactions" | elink -target protein | ef
 More advanced filtering with `xtract`.
 ````Shell
 esearch -db pubmed -query "microbiome [MAJR:TIAB] AND symbiosis [MAJR:TIAB] AND review [PT]" | efetch -format docsum | xtract -pattern DocumentSummary -sep '\t' -element Id PubDate Source Author Title ELocationID > symbiosis_reviews.txt
+
+esearch -db pubmed -query "symbiosis [MAJR:TIAB] OR organismic interactions [MAJR:TIAB] OR inter-kingdom [MAJR:TIAB] OR EPS [MAJR:TIAB]" | \
+elink -target protein | \
+efilter -organism Curvibacter sp. AEP1-3 | \
+efetch -format fasta > curvibacter_symbiosis_gene_candidates.faa
 ````
