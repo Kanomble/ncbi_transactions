@@ -8,7 +8,7 @@ Functional interfaces for transactions with NCBI databases. Download the refseq 
 Docker is used for the installation of required software.
 ```console
 docker build -t pythonblast:1.0 .
-docker run -dt --name pythonblast_jupyter -v ${PWD}:/blast/applications pythonblast:1.0
+docker run -dt --name pythonblast_jupyter -v ${PWD}:/blast/applications -p 127.0.0.1:8888:8888/tcp pythonblast:1.0 
 ```
 After container creation run: `docker exec -it pythonblast_juptyer /bin/sh` and activate the [E-Direct](https://www.ncbi.nlm.nih.gov/books/NBK179288/) executables with:
 ```console
