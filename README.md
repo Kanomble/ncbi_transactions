@@ -52,6 +52,6 @@ esearch -db pubmed -query "microbiome [MAJR:TIAB] AND symbiosis [MAJR:TIAB] AND 
 
 esearch -db pubmed -query "symbiosis[MAJR:TIAB] OR organismic+interactions[MAJR:TIAB] OR inter-kingdom[MAJR:TIAB] OR EPS[MAJR:TIAB]" | \
 elink -target protein | \
-efilter -organism Curvibacter sp. AEP1-3 -source refseq | \
+efilter -organism "Curvibacter+sp.+AEP1-3" -source refseq | \
 efetch -format fasta > curvibacter_symbiosis_gene_candidates.faa
 ````
