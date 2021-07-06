@@ -139,3 +139,4 @@ data/
 taxonomic_nodes/
 refseq_summary/
 .Trash-0/
+scripts/result_dataframe.csv
