@@ -59,4 +59,7 @@ esearch -db pubmed -query "symbiosis[MAJR:TIAB] OR organismic+interactions[MAJR:
 elink -target protein | \
 efilter -organism "Curvibacter+sp.+AEP1-3" -source refseq | \
 efetch -format fasta > curvibacter_symbiosis_gene_candidates.faa
+
+
+esearch -db assembly -query "Curvibacter" | efetch -format docsum
 ````
