@@ -4,3 +4,4 @@ biopython
 matplotlib
 ete3
 altair
+PyQt5
