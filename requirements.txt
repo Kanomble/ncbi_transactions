@@ -3,3 +3,4 @@ wget
 biopython
 matplotlib
 ete3
+altair
