@@ -6,7 +6,7 @@
 FROM ubuntu:focal
 
 # Download and install required software
-RUN apt-get update -y && apt-get upgrade -y && apt-get install curl -y && apt-get install wget bzip2 -y
+RUN apt-get update -y && apt-get upgrade -y && apt-get install curl -y && apt-get install wget bzip2 -y && apt-get install libgl1-mesa-glx -y && apt-get install libglib2.0-0 -y
 # Software and packages for the E-Direct Tool
 RUN apt-get -y -m update && DEBIAN_FRONTEND="noninteractive" apt-get install -y cpanminus libxml-simple-perl libwww-perl libnet-perl build-essential
 ENV TZ=Europe/Berlin
@@ -24,10 +24,8 @@ RUN rm Miniconda3-py38_4.9.2-Linux-x86_64.sh
 RUN curl ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/ncbi-blast-2.11.0+-x64-linux.tar.gz | tar -zxvpf-
 
 # Download & install NCBI EDIRECT
-RUN curl -s ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.tar.gz | \
- tar xzf - && \
- cpanm HTML::Entities && \
- edirect/setup.sh
+RUN sh -c "$(curl -fsSL ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh)"
+RUN mv $HOME/edirect .
 
 # Update path environment variable
 ENV PATH="/blast/edirect:$PATH"
